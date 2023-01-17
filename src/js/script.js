@@ -241,7 +241,7 @@
       // multiply price by amount
       price *= thisProduct.amountWidget.value;
 
-      thisProduct.priceSingle = price;
+      thisProduct.priceSingle = price/thisProduct.amountWidget.value;
       
 
       // update calculated price in the HTML
@@ -349,11 +349,12 @@
       if(thisWidget.value !== newValue && !isNaN(newValue) && newValue >= settings.amountWidget.defaultMin && newValue <= settings.amountWidget.defaultMax){
 
         thisWidget.value = newValue;
+        thisWidget.input.value = thisWidget.value;
         thisWidget.announce();
       }
       
 
-      thisWidget.input.value = thisWidget.value;
+      
 
 
 
@@ -485,16 +486,17 @@
         
         totalNumber += product.amount;
         subtotalPrice += product.price;
+
+        if(product.amount > 0){
         
+          thisCart.dom.deliveryFee.innerHTML = deliveryFee;
+          thisCart.totalPrice = subtotalPrice + deliveryFee;
+        }
         
         
 
       }
-      if(subtotalPrice > 0){
-        
-        thisCart.dom.deliveryFee.innerHTML = deliveryFee;
-        thisCart.totalPrice = subtotalPrice + deliveryFee;
-      }
+      
       console.log(totalNumber, subtotalPrice);
       
       thisCart.dom.subtotalPrice.innerHTML = subtotalPrice;
@@ -535,6 +537,8 @@
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
       thisCartProduct.initActions();
+      
+      console.log(thisCartProduct);
 
       
 
@@ -565,7 +569,7 @@
         thisCartProduct.price = thisCartProduct.priceSingle * thisCartProduct.amountWidget.value;
         
         thisCartProduct.dom.price.innerHTML = thisCartProduct.price;
-
+        
         
       });
     }
