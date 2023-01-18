@@ -333,7 +333,7 @@
       
 
       thisWidget.getElements(element);
-      thisWidget.setValue(settings.amountWidget.defaultValue);
+      thisWidget.setValue(thisWidget.input.value || settings.amountWidget.defaultValue);
       thisWidget.initActions();
 
     }
@@ -536,7 +536,8 @@
       const thisCart = this;
 
       thisCartProduct.dom.wrapper.remove();
-      thisCart.products.splice(thisCartProduct, thisCartProduct.amountWidget.value);
+      const indexOfProduct = thisCart.products.indexOf(thisCartProduct);
+      thisCart.products.splice(indexOfProduct, thisCartProduct.amountWidget.value);
       thisCart.update();
 
     }
