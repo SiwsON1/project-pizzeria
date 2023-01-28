@@ -66,6 +66,7 @@ export const select = {
     phone: '[name="phone"]',
     address: '[name="address"]',
     form: '.booking-form',
+    checkbox:'.booking-options',
   },
   nav: {
     links: '.main-nav a',
