@@ -171,8 +171,17 @@
         background: $color-dark;
         opacity: 0.4;
       }
-  
+
+     
     }
+
+    &.reserved {
+      cursor: not-allowed;
+      color: lighten($color-dark, 40%);
+      border: dashed $color-dark;
+      
+    }
+
   }
   
   [data-table="1"] {
