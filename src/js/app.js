@@ -5,6 +5,7 @@ import Booking from './components/Booking.js';
 
 
 
+
 const app = {
 
   initBooking: function(){
@@ -103,12 +104,8 @@ const app = {
   },
   init: function(){
     const thisApp = this;
+
     
-    window.addEventListener( 'load', function() {
-      
-      new Flickity( '.main-carousel', { cellAlign: 'left',
-        contain: true, autoPlay: true, prevNextButtons: false, draggable: false, pauseAutoPlayOnHover: false,});
-    });
 
     thisApp.initData();
 

@@ -1,7 +1,8 @@
 
 .home-wrapper{
-  margin: ($base-size * 3.5) auto;
-  padding: ($base-size * 6) ($base-size * 4);
+  
+  margin: 42px auto;
+  padding: (72) (48);
   background: $color-light;
   border-bottom: 1px solid lighten($color-dark, 70%);
   border-radius: $radius;
@@ -17,6 +18,7 @@
   justify-content: space-between;
   
 }
+
 .skill-image{
 
   
@@ -37,28 +39,26 @@
   
   
 }
+
 .clickable {
   height: 100%;
   width: 100%;
   left: 0;
   top: 0;
-  position: absolute;     
+  position: absolute;
   z-index: 1;
 }
 
 .skill-image:hover{
-
   .top-menu-title{
     animation: updown 2s ease infinite;
   }
 }
 
-
-
 .top-menu{
   width: 100%;
-  margin: ($base-size / 2) 0;
-  padding: ($base-size *0.5 ) ($base-size );
+  margin: 6 0;
+  padding: (6 ) (12);
   background: $color-main;
   border-bottom: 1px solid lighten($color-dark, 70%);
   border-radius: $radius;
@@ -84,9 +84,11 @@
   @extend .h2;
   color: $color-light;
 }
+
 .main-carousel{
   margin: 96px 0px;
 }
+
 .carousel-cell{
 
   display: flex;
@@ -101,14 +103,19 @@
 
   }
 }
+
 .carousel-text{
   padding-left: 30px;
-  p:last-of-type{
-    font-weight:$font-semibold;
-    font-family: $font-text;
-    font-style: italic;
-  }
+
 }
+
+.quote {
+
+  font-weight: $font-semibold;
+  font-family: $font-text;
+  font-style: italic;
+}
+
 .carousel-title{
   @extend .h2;
   
@@ -127,11 +134,12 @@
   }
   
 }
+
 .galery-image{
   width: 195px;
-    height: 195px;
-    padding-bottom: 8px;
-    position: relative;
+  height: 195px;
+  padding-bottom: 8px;
+  position: relative;
 
   img{
     
@@ -149,43 +157,37 @@
   height: 95%;
   background: black;
   content: '';
-  
   opacity: 0.4;
   display: none;
   
 }
-  .photo-logo{
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: auto;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: none;
+.photo-logo{
 
-      i{
-        font-size: 23px;
-        padding: 5px;
-        color: $color-light;
-        
-      }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+
+  i{
+    font-size: 23px;
+    padding: 5px;
+    color: $color-light;   
   }
+}
   
-    
-  
-  .galery-image:hover .photo-logo{
-    display: block;
-
-    
-       
+.galery-image:hover .photo-logo{
+  display: block;
+      
 }
 
 .galery-image:hover::before{
   display: block;
-  
   
 }
 
