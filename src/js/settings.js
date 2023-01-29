@@ -70,6 +70,7 @@ export const select = {
   },
   nav: {
     links: '.main-nav a',
+    hrefs:'.top-menu-wrapper a',
   },
   // CODE ADDED END
 };

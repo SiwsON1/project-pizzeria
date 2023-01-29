@@ -16,6 +16,7 @@ const app = {
     const thisApp = this;
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
+    thisApp.navHrefs = document.querySelectorAll(select.nav.hrefs);
 
     const idFromHash = window.location.hash.replace('#/', '');
 
@@ -32,6 +33,17 @@ const app = {
 
     for(let link of thisApp.navLinks){
       link.addEventListener('click', function(event){
+        const clickedElement = this;
+        event.preventDefault();
+        const id = clickedElement.getAttribute('href').replace('#', '');
+        
+        thisApp.activatePage(id);
+        window.location.hash = '#/' + id;
+      });
+    }
+
+    for(let href of thisApp.navHrefs){
+      href.addEventListener('click', function(event){
         const clickedElement = this;
         event.preventDefault();
         const id = clickedElement.getAttribute('href').replace('#', '');
@@ -91,7 +103,12 @@ const app = {
   },
   init: function(){
     const thisApp = this;
-     
+    
+    window.addEventListener( 'load', function() {
+      
+      new Flickity( '.main-carousel', { cellAlign: 'left',
+        contain: true, autoPlay: true, prevNextButtons: false, draggable: false, pauseAutoPlayOnHover: false,});
+    });
 
     thisApp.initData();
 
@@ -101,6 +118,8 @@ const app = {
 
   initCart: function(){
     const thisApp = this;
+
+   
 
     const cartElem = document.querySelector(select.containerOf.cart);
     thisApp.cart = new Cart(cartElem);
