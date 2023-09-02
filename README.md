@@ -1,5 +1,5 @@
 
-<h1>https://project-pizzeria.masik09.repl.co/#/booking</h1>h1>
+<h1>https://project-pizzeria.masik09.repl.co/#/booking</h1>
 
 Project Pizzeria 🍕
 
